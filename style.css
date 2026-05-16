@@ -14,7 +14,7 @@
 }
 
 body {
-    background-color: #0d1117;
+    background-color: #000120;
     color: #ffffff;
     font-family: Arial, sans-serif;
     min-height: 100vh;
@@ -28,7 +28,7 @@ body {
 button {
     background-color: transparent;
     color: #ffffff;
-    border: 2px solid #ffb3c6;
+    border: 2px solid #ffcdd7;
     border-radius: 10px;
     padding: 10px 20px;
     cursor: pointer;
@@ -41,7 +41,7 @@ button {
 }
 
 button:hover {
-    background-color: #ffb3c6;
+    background-color: #ffcdd7;
     color: #0d1117;
 }
 
