@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Niniality</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!--uvod-->
+    <div id="uvod" class="stranka" onclick="zobrazObsah()">
+        <h1>Is anyone there?</h1>
+    </div>
+
+
+    <!--HOME-->
+    <div id="home" class="stranka" style="display:none; flex-direction: column; align-items: center; gap: 20px;">
+        <h1>Hello</h1>
+        <button onclick="zobrazStranku('foodWheel', 'zvukWeee')">Spin for foooooood</button>
+    </div>
+
+
+    <!--KOLO STESTI-->
+    <div id="foodWheel" class="stranka" style="display:none; flex-direction: column; align-items: center; gap: 20px;">
+        <button class="homeBtn" onclick="zobrazStranku('home', null)">home</button>
+        <h1>spin spin spin</h1>
+        <div style="display: flex; gap: 20px;">
+            <button onclick="zobrazStranku('goingOut', null)">Venky Venky</button>
+            <button onclick="zobrazStranku('cooking', null)">Varime</button>
+        </div>
+    </div>
+
+    <div id="goingOut" class="stranka" style="display:none; flex-direction: column; align-items: center; gap: 10px;">
+        <button class="homeBtn" onclick="zobrazStranku('home', null)">home</button>
+        <h1>Venky venky!</h1>
+        <button onclick="toggleRoletka()">seznam</button>
+        <div id="roletkaGoingOut" class="roletka">
+            <div id="seznamGoingOut"></div>
+            <div style="display: flex; gap: 10px; margin-top: 10px;">
+                <input id="noveJidlo" type="text" placeholder="Přidat vlastní..." style="
+            background: transparent;
+            border: 2px solid #ffb3c6;
+            border-radius: 10px;
+            padding: 8px 12px;
+            color: white;
+            font-size: 16px;
+        ">
+                <button onclick="pridatJidlo('goingOut')">+</button>
+            </div>
+        </div>
+        <div id="seznamGoingOut" style="display: flex; flex-direction: column; gap: 8px; width: 300px;">
+        </div>
+
+        
+        <button onclick="zobrazStranku('foodWheel', null)">Zpět</button>
+    </div>
+
+    <div id="cooking" class="stranka" style="display:none; flex-direction: column; align-items: center; gap: 10px;">
+        <button class="homeBtn" onclick="zobrazStranku('home', null)">home</button>
+        <h1>Varime!</h1>
+        <button onclick="zobrazStranku('foodWheel', null)">Zpět</button>
+    </div>
+
+
+    <!--AUDIO-->
+    <audio id="zvukIsAnyoneThere" src="sounds/isAnyoneThere.wav"></audio>
+    <audio id="zvukHelloFriend" src="sounds/helloFriend.wav"></audio>
+    <audio id="zvukWeee" src="sounds/weeee.wav"></audio>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
