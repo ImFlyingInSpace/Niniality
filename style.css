@@ -16,7 +16,7 @@
 body {
     background-color: #000120;
     color: #ffffff;
-    font-family: Arial, sans-serif;
+    font-family: "JetBrains Mono", monospace;
     min-height: 100vh;
     padding: 20px;
     display: flex;
@@ -26,6 +26,7 @@ body {
 }
 
 button {
+    font-family: "JetBrains Mono", monospace;
     background-color: transparent;
     color: #ffffff;
     border: 2px solid #ffcdd7;
@@ -56,4 +57,8 @@ button:hover {
     padding-top: 10px;
     width: 100%;
     height: 100vh;
+}
+canvas {
+    display: block;
+    margin: 0 auto;
 }
