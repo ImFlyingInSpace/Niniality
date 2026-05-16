@@ -35,7 +35,7 @@
     <div id="goingOut" class="stranka" style="display:none; flex-direction: column; align-items: center; gap: 10px;">
         <button class="homeBtn" onclick="zobrazStranku('home', null)">home</button>
         <h1>Venky venky!</h1>
-        <button onclick="toggleRoletka()">seznam</button>
+        <button onclick="toggleRoletka('goingOut')">seznam</button>
         <div id="roletkaGoingOut" class="roletka">
             <div id="seznamGoingOut"></div>
             <div style="display: flex; gap: 10px; margin-top: 10px;">
@@ -50,8 +50,6 @@
                 <button onclick="pridatJidlo('goingOut')">+</button>
             </div>
         </div>
-        <div id="seznamGoingOut" style="display: flex; flex-direction: column; gap: 8px; width: 300px;">
-        </div>
         <canvas id="koloGoingOut" width="400" height="400"></canvas>
         <button onclick="tocitKolo('goingOut')">Weeeeeeeeeee</button>
         <p id="vysledekGoingOut" style="font-size: 24px; margin-top: 10px;"></p>
@@ -62,6 +60,25 @@
     <div id="cooking" class="stranka" style="display:none; flex-direction: column; align-items: center; gap: 10px;">
         <button class="homeBtn" onclick="zobrazStranku('home', null)">home</button>
         <h1>Varime!</h1>
+        <button onclick="toggleRoletka('cooking')">seznam</button>
+        <div id="roletkaCooking" class="roletka">
+            <div id="seznamCooking"></div>
+            <div style="display: flex; gap: 10px; margin-top: 10px;">
+                <input id="noveJidlo" type="text" placeholder="Přidat vlastní..." style="
+            background: transparent;
+            border: 2px solid #ffb3c6;
+            border-radius: 10px;
+            padding: 8px 12px;
+            color: white;
+            font-size: 16px;
+        ">
+                <button onclick="pridatJidlo('cooking')">+</button>
+            </div>
+        </div>
+        <canvas id="koloCooking" width="400" height="400"></canvas>
+        <button onclick="tocitKolo('cooking')">Weeeeeeeeeee</button>
+        <p id="vysledekCooking" style="font-size: 24px; margin-top: 10px;"></p>
+        
         <button onclick="zobrazStranku('foodWheel', null)">Zpět</button>
     </div>
 

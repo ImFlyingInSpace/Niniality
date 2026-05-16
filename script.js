@@ -14,9 +14,13 @@ function zobrazStranku(id, zvuk = null) {
 const defaultGoingOut = [
     "McDonalds", "KFC", "Popeyes", "Indie", "Wokin", "Pizza360", "Bageterie Boulevard", "Ugo", "Česká kuchyně", "Burgir", "Restaurace", "Hospoda"
 ];
+const defaultCooking = ["nevim", "neco"];
+
 function nacistJidla(kategorie) {
     const ulozena = localStorage.getItem(kategorie);
-    return ulozena ? JSON.parse(ulozena) : defaultGoingOut.map(j => ({ nazev: j, zaskrtnuto: true }));
+    if (ulozena) return JSON.parse(ulozena)
+    const defaultData = kategorie === "cooking" ? defaultCooking : defaultGoingOut;
+    return defaultData.map(j=>({nazev:j,zaskrtnuto:true}));
 }
 function ulozitJidla(kategorie, jidla) {
     localStorage.setItem(kategorie, JSON.stringify(jidla));
@@ -53,13 +57,13 @@ function pridatJidlo(kategorie) {
     input.value = "";
     zobrazitJidla(kategorie);
 }
-function toggleRoletka(){
-    const roletka = document.getElementById("roletkaGoingOut");
-    if(roletka.style.display === "flex"){
+function toggleRoletka(kategorie) {
+    const roletka = document.getElementById("roletka" + kategorie.charAt(0).toUpperCase() + kategorie.slice(1));
+    if (roletka.style.display === "flex") {
         roletka.style.display = "none";
     } else {
         roletka.style.display = "flex";
-        zobrazitJidla("goingOut");
+        zobrazitJidla(kategorie);
     }
 }
 function smazatJidlo(kategorie, index){
@@ -74,7 +78,7 @@ function nakresliKolo(kategorie, uhel){
     const jidla = nacistJidla(kategorie).filter(j=>j.zaskrtnuto);
     const pocet = jidla.length;
     const vysec = (2*Math.PI) / pocet;
-    const barvy = ["#8921C2","#FE39A4","#25C4F8","#FFDD00","#24FD36","#FF6B35","#FFB700"," #FF00FF"];
+    const barvy = ["#ffc6d9", "#efd3f9", "#d6e3ff", "#c6f0ff", "#cbf9f5", "#ffd9bb", "#ffecb9", "#e1ffbf"];
 
     jidla.forEach((jidlo, index)=>{
         const start = uhel + index * vysec;
